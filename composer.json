@@ -15,8 +15,8 @@
   "require" : {
   },
   "autoload" : {
-    "psr-4" : {
-      "Climberdav\\HPLayerBundle\\" : ""
+    "psr-0" : {
+      "Climberdav\\HPLayerBundle" : ""
     }
   },
   "extra" : {
