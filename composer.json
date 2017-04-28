@@ -14,12 +14,11 @@
   ],
   "require" : {
   },
-  "target-dir": "",
+
   "autoload" : {
-    "psr-0" : {
-      "Climberdav\\HPLayerBundle" : ""
-    }
+    "psr-0" : { "climberdav\\hp-layer" : "" }
   },
+  "target-dir": "",
   "extra" : {
     "branch-alias" : {
       "dev-master" : "0.1.0-dev"
