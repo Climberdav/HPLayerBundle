@@ -16,9 +16,9 @@
   },
 
   "autoload" : {
-    "psr-0" : { "climberdav\\hp-layer" : "" }
+    "psr-0" : { "Climberdav\\HPLayerBundle" : "" }
   },
-  "target-dir": "",
+  "target-dir": "Climberdav/HPLayerBundle",
   "extra" : {
     "branch-alias" : {
       "dev-master" : "0.1.0-dev"
