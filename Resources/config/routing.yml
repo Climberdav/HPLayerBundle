@@ -1,0 +1,3 @@
+climberdav_hp_layer_homepage:
+    path:     /
+    defaults: { _controller: ClimberdavHPLayerBundle:Default:index }

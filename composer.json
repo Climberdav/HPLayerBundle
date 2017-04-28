@@ -1,0 +1,30 @@
+{
+  "name" : "climberdav/hp-layer",
+  "description" : "Hyperplanning Abstract Layer",
+  "license": "MIT",
+  "type" : "symfony-bundle",
+  "authors": [{
+    "name": "David Dessertine",
+    "email": "dessertine.david@gmail.com",
+    "homepage": "https://www.linkedin.com/in/david-dessertine-62619838/",
+    "role": "Developper"
+  }],
+  "keywords" : [
+    "hyperplanning layer"
+  ],
+  "require" : {
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Climberdav\\HPLayerBundle" : ""
+    }
+  },
+  "target-dir" : "Climberdav/HPLayerBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "0.1.0-dev"
+    }
+  }
+}
