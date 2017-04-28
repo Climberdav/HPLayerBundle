@@ -19,9 +19,6 @@
       "Climberdav\\HPLayerBundle" : ""
     }
   },
-  "target-dir" : "Climberdav/HPLayerBundle",
-  "repositories" : [{
-  }],
   "extra" : {
     "branch-alias" : {
       "dev-master" : "0.1.0-dev"
