@@ -1,6 +1,6 @@
 <?php
 
-namespace Climberdav\HPLayerBundle\Tests\Controller;
+namespace HPLayerBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

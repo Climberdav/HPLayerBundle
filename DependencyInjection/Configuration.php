@@ -1,6 +1,6 @@
 <?php
 
-namespace Climberdav\HPLayerBundle\DependencyInjection;
+namespace HPLayerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,11 +18,18 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('climberdav_hp_layer');
+        $rootNode = $treeBuilder->root('hp_layer');;
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('host')->defaultNull()->end()
+                ->integerNode('port')->defaultValue(8080)->example('8080')->end()
+                ->scalarNode('protocol')->defaultValue('http')->example('https or http')->end()
+                ->scalarNode('login')->defaultNull()->end()
+                ->scalarNode('password')->defaultNull()->end()
+                ->scalarNode('root')->defaultNull()->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
