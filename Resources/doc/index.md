@@ -37,7 +37,7 @@ Installation
         port: "port number (default 80)"
         protocol: "http or https (default http)"
         login: "login of the Hyperlaning Web Service"
-        password: "password of the Hyperlaning Web Service
+        password: "password of the Hyperlaning Web Service"
         root: "root prefix Hyperlaning Web Service (default hpsw)"
     ```
     
@@ -59,3 +59,4 @@ public function yourAction(User $user)
     // change root
     $hpLayer->setRoot("New_Root");
 }
+```

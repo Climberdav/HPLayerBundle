@@ -1,4 +1,4 @@
 services:
    hp_layer_connect:
-        class: HPLayerBundle\Model\HPConnexion
+        class: ClimberdavHPLayerBundle\Model\HPConnexion
         arguments: ['%hp_layer_connect.options%']

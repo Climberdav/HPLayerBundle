@@ -13,12 +13,13 @@
     "hyperplanning layer"
   ],
   "require" : {
+    "php": ">=5.5"
   },
 
   "autoload" : {
-    "psr-0" : { "HPLayerBundle" : "" }
+    "psr-0" : { "Climberdav\\HPLayerBundle" : "" }
   },
-  "target-dir": "HPLayerBundle",
+  "target-dir": "Climberdav/HPLayerBundle",
   "extra" : {
     "branch-alias" : {
       "dev-master" : "0.1.0-dev"
