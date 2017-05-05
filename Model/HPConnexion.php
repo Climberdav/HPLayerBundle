@@ -185,6 +185,12 @@ class HPConnexion
     private function connect()
     {
         try{
+            // test if url exist
+            $headers = @get_headers($this->wsdl);
+            if(!strpos($headers[0],'503') === false){
+                // URL don't exist, exiting loop
+                throw new \Exception('url '.$this->wsdl.' does not exists');
+            }
             return new \SoapClient($this->wsdl,array("login" => $this->login,"password" => $this->password));
         }catch (\SoapFault $e){
         }

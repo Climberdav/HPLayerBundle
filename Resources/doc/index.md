@@ -1,6 +1,7 @@
 Installation
 ============
 > **IMPORTANT** This Bundle actually in developpment.
+
 > **NOTE:** The bundle is compatible with Symfony `2.8.*` upwards.
 
 1. Download this bundle to your project first. The preferred way to do it is
