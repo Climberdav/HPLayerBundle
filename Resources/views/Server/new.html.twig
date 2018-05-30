@@ -1,0 +1,33 @@
+{% extends '@ClimberdavHPLayer/layout.html.twig' %}
+{% trans_default_domain 'ClimberdavHPLayer' %}
+
+{% block title %}{{ 'server.new'|trans|capitalize }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'server.new'|trans|capitalize }} </h1>
+    {% dump(server) %}
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+            {{ form_row(form.name, {'label' : 'server.name'|trans|capitalize }) }}
+            {{ form_row(form.ip, {'label' : 'server.ip'|trans|capitalize }) }}
+            {{ form_row(form.port, {'label' : 'server.port'|trans|capitalize }) }}
+            {{ form_row(form.root, {'label' : 'server.root'|trans|capitalize }) }}
+            {{ form_row(form.login, {'label' : 'server.login'|trans|capitalize }) }}
+            {{ form_row(form.password, {'label' : 'server.password'|trans|capitalize }) }}
+            {{ form_row(form.disabled, {'label' : 'server.disabled'|trans|capitalize }) }}
+            {{ form_row(form.protocol, {'label' : 'server.protocol'|trans|capitalize }) }}
+        </div>
+        <p></p>
+    </div>
+     Form's actions
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <a class="btn btn-info" href="{{ path('climberdav_hp_layer_server_index') }}">{{ 'server.back'|trans|capitalize }} </a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            {{ form_widget( form.save, {'attr': {'class': 'btn btn-warning btn-lg pull-right'} } ) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "@ClimberdavHPLayer/layout.html.twig" %}
+{% trans_default_domain 'ClimberdavHPLayer' %}
+
+{% block title %}
+    {{ 'server.title'|trans|capitalize }}
+{% endblock title %}
+
+{% block content %}
+    <div class="table-responsive table-stripped">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>{{ "server.name"|trans|capitalize }}</th>
+                <th>{{ "server.ip"|trans|capitalize }}</th>
+                <th>{{ "server.port"|trans|capitalize }}</th>
+                <th>{{ "server.root"|trans|capitalize }}</th>
+                <th>{{ "server.login"|trans|capitalize }}</th>
+                <th>{{ "server.password"|trans|capitalize }}</th>
+                <th>{{ "server.firstdate"|trans|capitalize }}</th>
+                <th>{{ "server.action"|trans|capitalize }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for server in servers %}
+                <tr {% if server.disabled == true %}class="text-muted"{% endif %}>
+                    <td>
+                        <a href="#">
+                            {% if server.disabled == true %}
+                                <span class="text-danger glyphicon glyphicon-off"></span> <span class="sr-only">&nbsp;</span>
+                            {% else %}
+                                <span class="text-success glyphicon glyphicon-off"></span> <span class="sr-only">&nbsp;</span>
+                            {% endif %}
+                        </a>
+                    </td>
+                    <td>{{ server.name }}</td>
+                    <td>{{ server.ip }}</td>
+                    <td>{{ server.port }}</td>
+                    <td>{{ server.root }}</td>
+                    <td>{{ server.login }}</td>
+                    <td>{{ server.password }}</td>
+                    <td>{{ server.firstDayOfServer|date( "dateFormat"|trans ) }}</td>
+                    <td>
+                        <a href="{{ path('climberdav_hp_layer_server_edit', { 'id': server.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                        <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#serverDialog{{ server.id}}"><span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <div class="modal fade" id="serverDialog{{ server.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">{{ 'server.confirm'|trans|capitalize }}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ 'server.delete_msg'|trans|capitalize }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="{{ path('climberdav_hp_layer_server_new', { 'id': server.id }) }}" method="post">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            {{ form_widget(delete_forms[server.id]) }}
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'server.cancel'|trans|capitalize }}</button>
+                                            <button type="submit" class="btn btn-danger">
+                                                {{ 'server.confirm'|trans|capitalize }}
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div> <!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    </td>
+                </tr>
+            {%  endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ path('climberdav_hp_layer_server_new') }}" class="btn btn-primary btn-lg pull-right" role="button">{{ "server.new"|trans|capitalize }}</a>
+{% endblock content %}

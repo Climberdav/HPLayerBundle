@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="gqNTf.D" resname="name">
+        <source>name</source>
+        <target>Hyperplanning Abstract Layer</target>
+      </trans-unit>
+      <trans-unit id="QZuPjkb" resname="server.title">
+        <source>server.title</source>
+        <target>__server.title</target>
+      </trans-unit>
+      <trans-unit id="fvcBlEU" resname="server.name">
+        <source>server.name</source>
+        <target>__server.name</target>
+      </trans-unit>
+      <trans-unit id="tmIrzOO" resname="server.ip">
+        <source>server.ip</source>
+        <target>__server.ip</target>
+      </trans-unit>
+      <trans-unit id="6GKQgVZ" resname="server.port">
+        <source>server.port</source>
+        <target>__server.port</target>
+      </trans-unit>
+      <trans-unit id="nR_7htt" resname="server.root">
+        <source>server.root</source>
+        <target>__server.root</target>
+      </trans-unit>
+      <trans-unit id="V6krlgU" resname="server.login">
+        <source>server.login</source>
+        <target>__server.login</target>
+      </trans-unit>
+      <trans-unit id="CrxGfg5" resname="server.password">
+        <source>server.password</source>
+        <target>__server.password</target>
+      </trans-unit>
+      <trans-unit id="umxxloa" resname="server.firstdate">
+        <source>server.firstdate</source>
+        <target>__server.firstdate</target>
+      </trans-unit>
+      <trans-unit id="CRtuZ4f" resname="server.action">
+        <source>server.action</source>
+        <target>__server.action</target>
+      </trans-unit>
+      <trans-unit id="FepTuOa" resname="dateFormat">
+        <source>dateFormat</source>
+        <target>__dateFormat</target>
+      </trans-unit>
+      <trans-unit id="Af9AH09" resname="server.confirm">
+        <source>server.confirm</source>
+        <target>__server.confirm</target>
+      </trans-unit>
+      <trans-unit id="yR3RFsq" resname="server.delete_msg">
+        <source>server.delete_msg</source>
+        <target>__server.delete_msg</target>
+      </trans-unit>
+      <trans-unit id="8vC8N5D" resname="server.cancel">
+        <source>server.cancel</source>
+        <target>__server.cancel</target>
+      </trans-unit>
+      <trans-unit id="7xcmisn" resname="server.new">
+        <source>server.new</source>
+        <target>__server.new</target>
+      </trans-unit>
+      <trans-unit id="tsOqFCr" resname="server.edit">
+        <source>server.edit</source>
+        <target>__server.edit</target>
+      </trans-unit>
+      <trans-unit id="Wsm.wyJ" resname="server.of">
+        <source>server.of</source>
+        <target>__server.of</target>
+      </trans-unit>
+      <trans-unit id="OLifvEx" resname="server.disabled">
+        <source>server.disabled</source>
+        <target>__server.disabled</target>
+      </trans-unit>
+      <trans-unit id="qJb3E5." resname="server.protocol">
+        <source>server.protocol</source>
+        <target>__server.protocol</target>
+      </trans-unit>
+      <trans-unit id="UxWStnx" resname="server.back">
+        <source>server.back</source>
+        <target>__server.back</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

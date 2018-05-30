@@ -1,6 +1,6 @@
 <?php
 
-namespace ClimberdavHPLayerBundle\Traits;
+namespace Climberdav\HPLayerBundle\Traits;
 
 
 trait SubjectTrait

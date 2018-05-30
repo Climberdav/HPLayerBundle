@@ -1,6 +1,6 @@
 <?php
 
-namespace ClimberdavHPLayerBundle\DependencyInjection;
+namespace Climberdav\HPLayerBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -19,13 +19,23 @@ class ClimberdavHPLayerExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $config = $this->processConfiguration(new Configuration(), $configs);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-        $container->setParameter("hp_layer_connect.options", $config);
+        foreach ($config as $key => $value) {
+            $container->setParameter('climberdav_hp_layer.'.$key, $value);
+        }
 
 
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getAlias()
+    {
+        return 'climberdav_hp_layer';
     }
 }

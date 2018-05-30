@@ -1,9 +1,9 @@
 <?php
 
-namespace ClimberdavHPLayerBundle\Traits;
+namespace Climberdav\HPLayerBundle\Traits;
 
 
-use ClimberdavHPLayerBundle\Entity\Student;
+use Climberdav\HPLayerBundle\Entity\Student;
 
 trait StudentTrait
 {

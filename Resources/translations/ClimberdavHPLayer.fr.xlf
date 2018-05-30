@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="QZuPjkb">
+        <source>server.title</source>
+        <target>serveurs Hyperplanning</target>
+      </trans-unit>
+      <trans-unit id="fvcBlEU">
+        <source>server.name</source>
+        <target>nom du serveur</target>
+      </trans-unit>
+      <trans-unit id="tmIrzOO">
+        <source>server.ip</source>
+        <target>adresse IP</target>
+      </trans-unit>
+      <trans-unit id="6GKQgVZ">
+        <source>server.port</source>
+        <target>port</target>
+      </trans-unit>
+      <trans-unit id="nR_7htt">
+        <source>server.root</source>
+        <target>racine WSDL</target>
+      </trans-unit>
+      <trans-unit id="V6krlgU">
+        <source>server.login</source>
+        <target>nom d'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="CrxGfg5">
+        <source>server.password</source>
+        <target>mot de passe</target>
+      </trans-unit>
+      <trans-unit id="umxxloa">
+        <source>server.firstdate</source>
+        <target>date 1er jour de la base</target>
+      </trans-unit>
+      <trans-unit id="CRtuZ4f">
+        <source>server.action</source>
+        <target>actions</target>
+      </trans-unit>
+      <trans-unit id="FepTuOa">
+        <source>dateFormat</source>
+        <target>d/m/Y H:i</target>
+      </trans-unit>
+      <trans-unit id="Af9AH09">
+        <source>server.confirm</source>
+        <target>confirmation</target>
+      </trans-unit>
+      <trans-unit id="yR3RFsq">
+        <source>server.delete_msg</source>
+        <target>êtes vous sûr de vouloir supprimer le serveur</target>
+      </trans-unit>
+      <trans-unit id="8vC8N5D">
+        <source>server.cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="7xcmisn">
+        <source>server.new</source>
+        <target>Nouveau server Web Hyperplanning</target>
+      </trans-unit>
+      <trans-unit id="gqNTf.D">
+        <source>name</source>
+        <target>nom</target>
+      </trans-unit>
+      <trans-unit id="tsOqFCr">
+        <source>server.edit</source>
+        <target>édition server Hyperplanning</target>
+      </trans-unit>
+      <trans-unit id="Wsm.wyJ">
+        <source>server.of</source>
+        <target>de</target>
+      </trans-unit>
+      <trans-unit id="OLifvEx">
+        <source>server.disabled</source>
+        <target>désactivé</target>
+      </trans-unit>
+      <trans-unit id="qJb3E5.">
+        <source>server.protocol</source>
+        <target>protocol</target>
+      </trans-unit>
+      <trans-unit id="UxWStnx">
+        <source>server.back</source>
+        <target>Retour</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
