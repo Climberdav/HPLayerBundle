@@ -16,18 +16,22 @@ class Connexion
      */
     protected $wsdlClient;
 
+    /**
+     * @var Server $server
+     */
+    protected $server;
+
 
     /**
      * Connexion constructor.
      * @param Server $server
      * @throws \Exception|\SoapFault
      */
-    public function __construct(Server $server = null)
+    public function __construct(Server $server)
     {
-        if (null !== $server)
-        {
-            $this->setClient($server);
-        }
+        $this->server = $server;
+        $this->setClient($server);
+        $this->connect();
     }
 
 
@@ -43,10 +47,10 @@ class Connexion
      * @param Server $server
      * @throws \Exception
      */
-    public function setClient(Server $server)
+    public function setClient()
     {
-        $this->client = $server->getProtocol().'://'.$server->getHost().':'.$server->getPort()
-            .'/'.$server->getRoot().'/wsdl/RpcEncoded';
+        $this->client = $this->server->getProtocol().'://'.$this->server->getIp().':'.$this->server->getPort()
+            .'/'.$this->server->getRoot().'/wsdl/RpcEncoded';
         $this->wsdlClient = $this->connect();
     }
 
@@ -79,9 +83,9 @@ class Connexion
                 // URL don't exist, exiting loop
                 throw new \Exception('url '.$this->client.' does not exists');
             }
-            return new \SoapClient($this->client,array("login" => $this->login,"password" => $this->password));
+            return new \SoapClient($this->client,array("login" => $this->server->getLogin(),"password" => $this->server->getPassword()));
         }catch (\SoapFault $e){
-            throw new \SoapFault("connection error : ".$e->getMessage());
+            throw new \SoapFault(4, "connection error : ".$e->getMessage());
         }
     }
 
