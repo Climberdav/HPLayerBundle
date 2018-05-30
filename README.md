@@ -1,4 +1,4 @@
-HPLayerBundle
+Hyperplanning Abstract Layer Bundle
 ====
 
 This bundle provide an abstract layer of Hyperplanning webservice.
