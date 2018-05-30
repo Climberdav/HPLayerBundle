@@ -85,6 +85,10 @@
         <source>server.back</source>
         <target>__server.back</target>
       </trans-unit>
+      <trans-unit id="UxWgfhdgnx">
+        <source>server.save</source>
+        <target>enregistrer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

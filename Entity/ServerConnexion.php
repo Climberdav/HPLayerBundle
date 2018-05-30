@@ -2,7 +2,7 @@
 
 namespace Climberdav\HPLayerBundle\Entity;
 
-class Connexion
+class ServerConnexion
 {
     /**
      * @var
@@ -21,7 +21,7 @@ class Connexion
 
 
     /**
-     * Connexion constructor.
+     * ServerConnexion constructor.
      * @param Server $server
      * @throws \Exception|\SoapFault
      */

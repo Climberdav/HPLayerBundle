@@ -27,8 +27,6 @@ class ClimberdavHPLayerExtension extends Extension
         foreach ($config as $key => $value) {
             $container->setParameter('climberdav_hp_layer.'.$key, $value);
         }
-
-
     }
 
     /**

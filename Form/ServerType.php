@@ -63,7 +63,7 @@ class ServerType extends AbstractType
             ])
             ->add('firstDayOfServer', DateType::class)
             ->add('save',SubmitType::class, [
-                'label' => 'server.firstdate',
+                'label' => 'server.save',
             ])
             ;
     }

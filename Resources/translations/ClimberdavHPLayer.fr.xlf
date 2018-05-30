@@ -80,7 +80,11 @@
       </trans-unit>
       <trans-unit id="UxWStnx">
         <source>server.back</source>
-        <target>Retour</target>
+        <target>retour</target>
+      </trans-unit>
+      <trans-unit id="UxWgfhdgnx">
+        <source>server.save</source>
+        <target>enregistrer</target>
       </trans-unit>
     </body>
   </file>

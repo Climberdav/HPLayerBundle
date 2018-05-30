@@ -1,6 +1,6 @@
 <?php
 
-namespace Climberdav\HPLayerBundle\Tests\App;
+namespace App\Tests\App;
 
 
 use Symfony\Component\Config\Loader\LoaderInterface;
