@@ -1,10 +1,9 @@
 {% extends '@ClimberdavHPLayer/layout.html.twig' %}
 {% trans_default_domain 'ClimberdavHPLayer' %}
 
-{% block title %}{{ 'server.edit'|trans|capitalize }}{% endblock %}
+{% block title %}{{ 'server.edit'|trans|capitalize }} {{ 'server.of'|trans }} <i>{{ edit_form.vars.value.name }}</i>{% endblock %}
 
-{% block body %}
-    <h1>{{ 'server.edit'|trans|capitalize }} {{ 'server.of'|trans }} <i>{{ edit_form.vars.value.name }}</i></h1>
+{% block content %}
     {{ form_start(edit_form) }}
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
@@ -16,6 +15,7 @@
             {{ form_row(edit_form.password, {'label' : 'server.password'|trans|capitalize }) }}
             {{ form_row(edit_form.disabled, {'label' : 'server.disabled'|trans|capitalize }) }}
             {{ form_row(edit_form.protocol, {'label' : 'server.protocol'|trans|capitalize }) }}
+            {{ form_row(edit_form.firstDayOfServer, {'label' : 'server.firstdate'|trans|capitalize }) }}
         </div>
         <p></p>
     </div>
@@ -25,7 +25,7 @@
             <a class="btn btn-info" href="{{ path('climberdav_hp_layer_server_index') }}">{{ 'server.back'|trans|capitalize }} </a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-            {{ form_widget( edit_form.save, {'attr': {'class': 'btn btn-warning btn-lg pull-right'} } ) }}
+            {{ form_widget( edit_form.save, {'attr': {'class': 'btn btn-warning pull-right'} } ) }}
         </div>
         {{ form_end(edit_form) }}
     </div>

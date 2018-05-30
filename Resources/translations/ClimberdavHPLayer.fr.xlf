@@ -40,7 +40,7 @@
       </trans-unit>
       <trans-unit id="FepTuOa">
         <source>dateFormat</source>
-        <target>d/m/Y H:i</target>
+        <target>d/m/Y</target>
       </trans-unit>
       <trans-unit id="Af9AH09">
         <source>server.confirm</source>
