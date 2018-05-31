@@ -44,7 +44,6 @@
       "App\\Tests\\": "Tests/"
     }
   },
-  "target-dir": "Climberdav/HPLayerBundle",
   "extra" : {
     "branch-alias" : {
       "dev-master" : "0.1.0-dev"
