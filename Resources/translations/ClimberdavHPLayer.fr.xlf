@@ -2,89 +2,117 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="file.ext">
     <body>
-      <trans-unit id="QZuPjkb">
+      <trans-unit id="1">
         <source>server.title</source>
         <target>serveurs Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="fvcBlEU">
+      <trans-unit id="2">
         <source>server.name</source>
         <target>nom du serveur</target>
       </trans-unit>
-      <trans-unit id="tmIrzOO">
+      <trans-unit id="3">
         <source>server.ip</source>
         <target>adresse IP</target>
       </trans-unit>
-      <trans-unit id="6GKQgVZ">
+      <trans-unit id="4">
         <source>server.port</source>
         <target>port</target>
       </trans-unit>
-      <trans-unit id="nR_7htt">
+      <trans-unit id="5">
         <source>server.root</source>
         <target>racine WSDL</target>
       </trans-unit>
-      <trans-unit id="V6krlgU">
+      <trans-unit id="6">
         <source>server.login</source>
         <target>nom d'utilisateur</target>
       </trans-unit>
-      <trans-unit id="CrxGfg5">
+      <trans-unit id="7">
         <source>server.password</source>
         <target>mot de passe</target>
       </trans-unit>
-      <trans-unit id="umxxloa">
+      <trans-unit id="8">
         <source>server.firstdate</source>
         <target>date 1er jour de la base</target>
       </trans-unit>
-      <trans-unit id="CRtuZ4f">
+      <trans-unit id="9">
         <source>server.action</source>
         <target>actions</target>
       </trans-unit>
-      <trans-unit id="FepTuOa">
+      <trans-unit id="10">
         <source>dateFormat</source>
         <target>d/m/Y</target>
       </trans-unit>
-      <trans-unit id="Af9AH09">
+      <trans-unit id="11">
         <source>server.confirm</source>
         <target>confirmation</target>
       </trans-unit>
-      <trans-unit id="yR3RFsq">
+      <trans-unit id="12">
         <source>server.delete_msg</source>
         <target>êtes vous sûr de vouloir supprimer le serveur</target>
       </trans-unit>
-      <trans-unit id="8vC8N5D">
+      <trans-unit id="13">
         <source>server.cancel</source>
         <target>Annuler</target>
       </trans-unit>
-      <trans-unit id="7xcmisn">
+      <trans-unit id="14">
         <source>server.new</source>
         <target>Nouveau server Web Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="gqNTf.D">
+      <trans-unit id="15">
         <source>name</source>
-        <target>nom</target>
+        <target>Couche d'abstraction d'Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="tsOqFCr">
+      <trans-unit id="16">
         <source>server.edit</source>
         <target>édition server Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="Wsm.wyJ">
+      <trans-unit id="17">
         <source>server.of</source>
         <target>de</target>
       </trans-unit>
-      <trans-unit id="OLifvEx">
+      <trans-unit id="18">
         <source>server.disabled</source>
         <target>désactivé</target>
       </trans-unit>
-      <trans-unit id="qJb3E5.">
+      <trans-unit id="19">
         <source>server.protocol</source>
         <target>protocol</target>
       </trans-unit>
-      <trans-unit id="UxWStnx">
+      <trans-unit id="20">
         <source>server.back</source>
         <target>retour</target>
       </trans-unit>
-      <trans-unit id="UxWgfhdgnx">
+      <trans-unit id="21">
         <source>server.save</source>
         <target>enregistrer</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>server.previous</source>
+        <target>server précedent</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>server.previous.choice</source>
+        <target>choisir le serveur précedent (si besoin)</target>
+      </trans-unit>
+        <trans-unit id="24">
+            <source>server.edit_ok</source>
+            <target>succès de la mise à jour </target>
+        </trans-unit>
+        <trans-unit id="24">
+            <source>server.edit_ok</source>
+            <target>succès de la mise à jour </target>
+        </trans-unit>
+        <trans-unit id="25">
+            <source>flash.tested.ok</source>
+            <target>Connexion avec le serveur valide</target>
+        </trans-unit>
+        <trans-unit id="26">
+            <source>flash.tested.fail</source>
+            <target>echec de la connexion avec le serveur, erreur: </target>
+        </trans-unit>
+      <trans-unit id="27">
+        <source>server.version</source>
+        <target>Version</target>
       </trans-unit>
     </body>
   </file>

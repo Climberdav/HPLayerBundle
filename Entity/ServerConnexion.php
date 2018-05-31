@@ -2,6 +2,13 @@
 
 namespace Climberdav\HPLayerBundle\Entity;
 
+/**
+ * Class ServerConnexion
+ *
+ * @author David Dessertine <dessertine.david@gmail.com>
+ * @package Climberdav\HPLayerBundle\Entity
+ * @ORM\Entity()
+ */
 class ServerConnexion
 {
     /**
@@ -70,6 +77,7 @@ class ServerConnexion
     /**
      * @return \SoapClient
      * @throws \Exception
+     * @throws \SoapFault
      */
     private function connect()
     {
@@ -79,10 +87,14 @@ class ServerConnexion
             if(!strpos($headers[0],'503') === false){
                 // URL don't exist, exiting loop
                 throw new \Exception('url '.$this->client.' does not exists');
+                return false;
             }
-            return new \SoapClient($this->client,array("login" => $this->server->getLogin(),"password" => $this->server->getPassword()));
+            $client = new \SoapClient($this->client,array("login" => $this->server->getLogin(),"password" => $this->server->getPassword()));
+            // test if credentials are valid
+            $client->DatePremierJourBase();
+            return $client;
         }catch (\SoapFault $e){
-            throw new \SoapFault(4, "connection error : ".$e->getMessage());
+            throw new \SoapFault($e->faultcode, "connection error : ".$e->faultstring);
         }
     }
 

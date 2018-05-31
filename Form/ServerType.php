@@ -2,6 +2,7 @@
 
 namespace Climberdav\HPLayerBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -62,6 +63,13 @@ class ServerType extends AbstractType
                 'required' => false
             ])
             ->add('firstDayOfServer', DateType::class)
+            ->add('previousServer', EntityType::class, [
+                'class' => 'ClimberdavHPLayerBundle:Server',
+                'choice_label' => 'name',
+                'required' => false,
+                'label' => 'server.previous',
+                'placeholder' => 'server.previous.choice'
+                ])
             ->add('save',SubmitType::class, [
                 'label' => 'server.save',
             ])

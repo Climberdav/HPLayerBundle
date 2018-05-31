@@ -1,9 +1,11 @@
 <?php
 
 namespace Climberdav\HPLayerBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Climberdav\HPLayerBundle\Entity\ServerConnexion;
 
 /**
  * Server Entity
@@ -45,19 +47,20 @@ class Server
      * @var integer
      * @ORM\Column(name="host_port", type="integer")
      */
-    private $port;
+    private $port = '8080';
 
     /**
      * @var string
      * @ORM\Column(name="wsdl_root", type="string")
      */
-    private $root;
+    private $root = 'hpsw';
 
     /**
      * @var string
+     * @var string
      * @ORM\Column(name="wsdl_login", type="string")
      */
-    private $login;
+    private $login = 'WWWUSER';
 
     /**
      * @var string
@@ -82,6 +85,17 @@ class Server
      * @ORM\Column(name="disabled", type="boolean")
      */
     private $disabled = false;
+
+    /**
+     * @var string
+     * @ORM\Column(name="version", type="string", nullable=true)
+     */
+    private $version;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Climberdav\HPLayerBundle\Entity\Server")
+     */
+    private $previousServer;
 
     /**
      * Get id
@@ -283,5 +297,69 @@ class Server
     public function getFirstDayOfServer()
     {
         return $this->firstDayOfServer;
+    }
+
+    /**
+     * Set disabled
+     *
+     * @param boolean $disabled
+     *
+     * @return Server
+     */
+    public function setDisabled($disabled)
+    {
+        $this->disabled = $disabled;
+
+        return $this;
+    }
+
+    /**
+     * Get disabled
+     *
+     * @return boolean
+     */
+    public function isDisabled()
+    {
+        return $this->disabled;
+    }
+
+    public function connect()
+    {
+        $connexion = new ServerConnexion($this);
+        return $connexion->getWsdlClient();
+    }
+
+    /**
+     * Get disabled
+     *
+     * @return boolean
+     */
+    public function getDisabled()
+    {
+        return $this->disabled;
+    }
+
+    /**
+     * Set previousServer
+     *
+     * @param \Climberdav\HPLayerBundle\Entity\Server $previousServer
+     *
+     * @return Server
+     */
+    public function setPreviousServer(\Climberdav\HPLayerBundle\Entity\Server $previousServer = null)
+    {
+        $this->previousServer = $previousServer;
+
+        return $this;
+    }
+
+    /**
+     * Get previousServer
+     *
+     * @return \Climberdav\HPLayerBundle\Entity\Server
+     */
+    public function getPreviousServer()
+    {
+        return $this->previousServer;
     }
 }

@@ -10,7 +10,7 @@ use Climberdav\HPLayerBundle\Entity\ServerConnexion;
 /**
  * Server Entity
  *
- * @author Davdi Dessertine <dessertine.david@gmail.com>
+ * @author David Dessertine <dessertine.david@gmail.com>
  * @package Climberdav\HPLayerBundle\Entity
  *
  * @ORM\Table(name="hyperplanning_server")
@@ -57,7 +57,6 @@ class Server
 
     /**
      * @var string
-     * @var string
      * @ORM\Column(name="wsdl_login", type="string")
      */
     private $login = 'WWWUSER';
@@ -85,6 +84,17 @@ class Server
      * @ORM\Column(name="disabled", type="boolean")
      */
     private $disabled = false;
+
+    /**
+     * @var string
+     * @ORM\Column(name="version", type="string", nullable=true)
+     */
+    private $version;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Climberdav\HPLayerBundle\Entity\Server")
+     */
+    private $previousServer;
 
     /**
      * Get id
@@ -316,5 +326,63 @@ class Server
     {
         $connexion = new ServerConnexion($this);
         return $connexion->getWsdlClient();
+    }
+
+    /**
+     * Get disabled
+     *
+     * @return boolean
+     */
+    public function getDisabled()
+    {
+        return $this->disabled;
+    }
+
+    /**
+     * Set previousServer
+     *
+     * @param \Climberdav\HPLayerBundle\Entity\Server $previousServer
+     *
+     * @return Server
+     */
+    public function setPreviousServer(\Climberdav\HPLayerBundle\Entity\Server $previousServer = null)
+    {
+        $this->previousServer = $previousServer;
+
+        return $this;
+    }
+
+    /**
+     * Get previousServer
+     *
+     * @return \Climberdav\HPLayerBundle\Entity\Server
+     */
+    public function getPreviousServer()
+    {
+        return $this->previousServer;
+    }
+
+    /**
+     * Set version
+     *
+     * @param string $version
+     *
+     * @return Server
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+
+    /**
+     * Get version
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
     }
 }

@@ -16,8 +16,9 @@
                 <th>{{ "server.port"|trans|capitalize }}</th>
                 <th>{{ "server.root"|trans|capitalize }}</th>
                 <th>{{ "server.login"|trans|capitalize }}</th>
-                <th>{{ "server.password"|trans|capitalize }}</th>
                 <th>{{ "server.firstdate"|trans|capitalize }}</th>
+                <th>{{ "server.version"|trans|capitalize }}</th>
+                <th>{{ "server.previous"|trans|capitalize }}</th>
                 <th>{{ "server.action"|trans|capitalize }}</th>
             </tr>
             </thead>
@@ -25,7 +26,7 @@
             {%  for server in servers %}
                 <tr {% if server.disabled == true %}class="text-muted"{% endif %}>
                     <td>
-                        <a href="#">
+                        <a href="{{ path('climberdav_hp_layer_server_toggle', { 'id': server.id }) }}" title="Toggle">
                             {% if server.disabled == true %}
                                 <span class="text-danger glyphicon glyphicon-off"></span> <span class="sr-only">&nbsp;</span>
                             {% else %}
@@ -38,12 +39,14 @@
                     <td>{{ server.port }}</td>
                     <td>{{ server.root }}</td>
                     <td>{{ server.login }}</td>
-                    <td>{{ server.password }}</td>
                     <td>{{ server.firstDayOfServer|date( "dateFormat"|trans ) }}</td>
+                    <td>{{ server.version }}</td>
+                    <td>{% if server.previousServer != null %}{{ server.previousServer.name }}{% endif %}</td>
                     <td>
-                        <a href="{{ path('climberdav_hp_layer_server_edit', { 'id': server.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-                        <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#serverDialog{{ server.id}}"><span class="glyphicon glyphicon-remove"></span>
-                        </button>
+                        <a href="{{ path('climberdav_hp_layer_server_test', { 'id': server.id }) }}" class="text-info" title="Test"><span class="glyphicon glyphicon-flash"></span></a>
+                        <a href="{{ path('climberdav_hp_layer_server_edit', { 'id': server.id }) }}" class="text-warning" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a href="#" class="text-danger" title="Delete" data-toggle="modal" data-target="#serverDialog{{ server.id}}"><span class="glyphicon glyphicon-remove"></span>
+                        </a>
                         <div class="modal fade" id="serverDialog{{ server.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">

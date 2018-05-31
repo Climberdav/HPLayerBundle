@@ -2,6 +2,7 @@
 
 namespace Climberdav\HPLayerBundle\Controller;
 
+use Climberdav\HPLayerBundle\ClimberdavHPLayerBundle;
 use Climberdav\HPLayerBundle\Entity\Server;
 use Climberdav\HPLayerBundle\Form\ServerType;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +28,7 @@ class ServerController extends BaseController
     public function indexAction()
     {
         $servers = $this->getDoctrineManager()
-            ->getRepository("ClimberdavHPLayerBundle:Server")
+            ->getRepository(Server::class)
             ->findAll();
         $deleteForms = array();
         foreach ($servers as $server) {
@@ -77,15 +78,15 @@ class ServerController extends BaseController
      */
     public function editAction(Request $request, Server $server){
         $deleteForm = $this->createDeleteForm($server);
-        $editForm = $this->createForm('Climberdav\HPLayerBundle\Form\ServerType', $server);
+        $editForm = $this->createForm(ServerType::class, $server);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrineManager();
-            $em->persist($server);
-            $em->flush();
+            $entityManager = $this->getDoctrineManager();
+            $entityManager->persist($server);
+            $entityManager->flush();
 
-            $message = $this->get('translator')->trans('server.edit_ok');
+            $message = $this->get('translator')->trans('server.edit_ok', [], 'ClimberdavHPLayer');
 
             $this->get('session')->getFlashBag()->add('success', $message);
 
@@ -114,9 +115,9 @@ class ServerController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($server);
-            $em->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($server);
+            $entityManager->flush();
         }
         return $this->redirectToRoute("climberdav_hp_layer_server_index");
     }
@@ -135,5 +136,46 @@ class ServerController extends BaseController
             ->setMethod('DELETE')
             ->getForm()
             ;
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse
+     * @Route("/{id}/test", name="climberdav_hp_layer_server_test")
+     */
+    public function testAction($id)
+    {
+        $entityManager = $this->getDoctrineManager();
+        $server = $entityManager->getRepository(Server::class)->find($id);
+        $client= $server->connect();
+        if ($client)
+        {
+            $server->setFirstDayOfServer(new \DateTime($client->DatePremierJourBase()));
+            $server->setVersion($client->version());
+            $entityManager->persist($server);
+            $entityManager->flush();
+            $this->get('session')->getFlashBag()
+                ->add('success', $this->get('translator')->trans('flash.tested.ok', [], 'ClimberdavHPLayer'));
+        }else{
+            $this->get('session')->getFlashBag()
+                ->add('success', $this->get('translator')->trans('flash.tested.fail', [], 'ClimberdavHPLayer'));
+        }
+        return $this->redirect($this->generateUrl('climberdav_hp_layer_server_index'));
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse
+     * @Route("/{id}/toggle", name="climberdav_hp_layer_server_toggle")
+     */
+    public function toggleAction($id)
+    {
+        $entityManager = $this->getDoctrineManager();
+        $server = $entityManager->getRepository(Server::class)->find($id);
+        $server->setDisabled(!$server->isDisabled());
+        $entityManager->persist($server);
+        $entityManager->flush();
+
+        return $this->redirect($this->generateUrl('climberdav_hp_layer_server_index'));
     }
 }
