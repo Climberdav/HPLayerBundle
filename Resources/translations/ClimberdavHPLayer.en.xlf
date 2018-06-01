@@ -5,111 +5,111 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="1">
+      <trans-unit id="climberdav_hp_layer_1">
         <source>server.title</source>
         <target>hyperplanning servers</target>
       </trans-unit>
-      <trans-unit id="2">
+      <trans-unit id="climberdav_hp_layer_2">
         <source>server.name</source>
         <target>server name</target>
       </trans-unit>
-      <trans-unit id="3">
+      <trans-unit id="climberdav_hp_layer_3">
         <source>server.ip</source>
         <target>IP address</target>
       </trans-unit>
-      <trans-unit id="4">
+      <trans-unit id="climberdav_hp_layer_4">
         <source>server.port</source>
         <target>port</target>
       </trans-unit>
-      <trans-unit id="5">
+      <trans-unit id="climberdav_hp_layer_5">
         <source>server.root</source>
         <target>WSDL root</target>
       </trans-unit>
-      <trans-unit id="6">
+      <trans-unit id="climberdav_hp_layer_6">
         <source>server.login</source>
         <target>username</target>
       </trans-unit>
-      <trans-unit id="7">
+      <trans-unit id="climberdav_hp_layer_7">
         <source>server.password</source>
         <target>password</target>
       </trans-unit>
-      <trans-unit id="8">
+      <trans-unit id="climberdav_hp_layer_8">
         <source>server.firstdate</source>
         <target>first date of the base</target>
       </trans-unit>
-      <trans-unit id="9">
+      <trans-unit id="climberdav_hp_layer_9">
         <source>server.action</source>
         <target>actions</target>
       </trans-unit>
-      <trans-unit id="10">
+      <trans-unit id="climberdav_hp_layer_10">
         <source>dateFormat</source>
         <target>Y-m-d</target>
       </trans-unit>
-      <trans-unit id="11">
+      <trans-unit id="climberdav_hp_layer_11">
         <source>server.confirm</source>
         <target>confirm</target>
       </trans-unit>
-      <trans-unit id="12">
+      <trans-unit id="climberdav_hp_layer_12">
         <source>server.delete_msg</source>
         <target>are you sure to delete this server ?</target>
       </trans-unit>
-      <trans-unit id="13">
+      <trans-unit id="climberdav_hp_layer_13">
         <source>server.cancel</source>
         <target>cancel</target>
       </trans-unit>
-      <trans-unit id="14">
+      <trans-unit id="climberdav_hp_layer_14">
         <source>server.new</source>
         <target>New server</target>
       </trans-unit>
-      <trans-unit id="15">
+      <trans-unit id="climberdav_hp_layer_15">
         <source>name</source>
         <target>Climberdav Hyperplanning Abstract Layer</target>
       </trans-unit>
-      <trans-unit id="16">
+      <trans-unit id="climberdav_hp_layer_16">
         <source>server.edit</source>
         <target>edit server</target>
       </trans-unit>
-      <trans-unit id="17">
+      <trans-unit id="climberdav_hp_layer_17">
         <source>server.of</source>
         <target>of</target>
       </trans-unit>
-      <trans-unit id="18">
+      <trans-unit id="climberdav_hp_layer_18">
         <source>server.disabled</source>
         <target>disabled</target>
       </trans-unit>
-      <trans-unit id="19">
+      <trans-unit id="climberdav_hp_layer_19">
         <source>server.protocol</source>
         <target>protocol</target>
       </trans-unit>
-      <trans-unit id="20">
+      <trans-unit id="climberdav_hp_layer_20">
         <source>server.back</source>
         <target>back</target>
       </trans-unit>
-      <trans-unit id="21">
+      <trans-unit id="climberdav_hp_layer_21">
         <source>server.save</source>
         <target>save</target>
       </trans-unit>
-      <trans-unit id="22">
+      <trans-unit id="climberdav_hp_layer_22">
         <source>server.previous</source>
         <target>previous</target>
       </trans-unit>
-      <trans-unit id="23">
+      <trans-unit id="climberdav_hp_layer_23">
         <source>server.previous.choice</source>
         <target>choose previous server (if necessary)</target>
       </trans-unit>
-        <trans-unit id="24">
+        <trans-unit id="climberdav_hp_layer_24">
             <source>server.edit_ok</source>
             <target>server updated</target>
         </trans-unit>
-        <trans-unit id="25">
+        <trans-unit id="climberdav_hp_layer_25">
             <source>flash.tested.ok</source>
             <target>server is valid</target>
         </trans-unit>
-        <trans-unit id="26">
+        <trans-unit id="climberdav_hp_layer_26">
             <source>flash.tested.fail</source>
             <target>server is not valid, please check your configuration</target>
         </trans-unit>
-      <trans-unit id="27">
+      <trans-unit id="climberdav_hp_layer_27">
         <source>server.version</source>
         <target>Version</target>
       </trans-unit>

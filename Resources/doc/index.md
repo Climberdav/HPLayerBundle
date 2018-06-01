@@ -47,7 +47,7 @@ $ php bin/console doctrine:schema:update --force
 ````
 
 ***Note:*** Migrations
-If you use doctrine migration create an empty migration file `$ php bin/console doctrine:migrations:generate` and add the following line
+If you use doctrine migration create an empty migration file `$ php bin/console doctrine:migrations:generate` and add the following lines:
 
 ````php
     public function up(Schema $schema)

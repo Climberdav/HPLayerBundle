@@ -2,111 +2,111 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="file.ext">
     <body>
-      <trans-unit id="1">
+      <trans-unit id="climberdav_hp_layer_1">
         <source>server.title</source>
         <target>serveurs Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="2">
+      <trans-unit id="climberdav_hp_layer_2">
         <source>server.name</source>
         <target>nom du serveur</target>
       </trans-unit>
-      <trans-unit id="3">
+      <trans-unit id="climberdav_hp_layer_3">
         <source>server.ip</source>
         <target>adresse IP</target>
       </trans-unit>
-      <trans-unit id="4">
+      <trans-unit id="climberdav_hp_layer_4">
         <source>server.port</source>
         <target>port</target>
       </trans-unit>
-      <trans-unit id="5">
+      <trans-unit id="climberdav_hp_layer_5">
         <source>server.root</source>
         <target>racine WSDL</target>
       </trans-unit>
-      <trans-unit id="6">
+      <trans-unit id="climberdav_hp_layer_6">
         <source>server.login</source>
         <target>nom d'utilisateur</target>
       </trans-unit>
-      <trans-unit id="7">
+      <trans-unit id="climberdav_hp_layer_7">
         <source>server.password</source>
         <target>mot de passe</target>
       </trans-unit>
-      <trans-unit id="8">
+      <trans-unit id="climberdav_hp_layer_8">
         <source>server.firstdate</source>
         <target>date 1er jour de la base</target>
       </trans-unit>
-      <trans-unit id="9">
+      <trans-unit id="climberdav_hp_layer_9">
         <source>server.action</source>
         <target>actions</target>
       </trans-unit>
-      <trans-unit id="10">
+      <trans-unit id="climberdav_hp_layer_10">
         <source>dateFormat</source>
         <target>d/m/Y</target>
       </trans-unit>
-      <trans-unit id="11">
+      <trans-unit id="climberdav_hp_layer_11">
         <source>server.confirm</source>
         <target>confirmation</target>
       </trans-unit>
-      <trans-unit id="12">
+      <trans-unit id="climberdav_hp_layer_12">
         <source>server.delete_msg</source>
         <target>êtes vous sûr de vouloir supprimer le serveur</target>
       </trans-unit>
-      <trans-unit id="13">
+      <trans-unit id="climberdav_hp_layer_13">
         <source>server.cancel</source>
         <target>Annuler</target>
       </trans-unit>
-      <trans-unit id="14">
+      <trans-unit id="climberdav_hp_layer_14">
         <source>server.new</source>
         <target>Nouveau server Web Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="15">
+      <trans-unit id="climberdav_hp_layer_15">
         <source>name</source>
         <target>Couche d'abstraction d'Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="16">
+      <trans-unit id="climberdav_hp_layer_16">
         <source>server.edit</source>
         <target>édition server Hyperplanning</target>
       </trans-unit>
-      <trans-unit id="17">
+      <trans-unit id="climberdav_hp_layer_17">
         <source>server.of</source>
         <target>de</target>
       </trans-unit>
-      <trans-unit id="18">
+      <trans-unit id="climberdav_hp_layer_18">
         <source>server.disabled</source>
         <target>désactivé</target>
       </trans-unit>
-      <trans-unit id="19">
+      <trans-unit id="climberdav_hp_layer_19">
         <source>server.protocol</source>
         <target>protocol</target>
       </trans-unit>
-      <trans-unit id="20">
+      <trans-unit id="climberdav_hp_layer_20">
         <source>server.back</source>
         <target>retour</target>
       </trans-unit>
-      <trans-unit id="21">
+      <trans-unit id="climberdav_hp_layer_21">
         <source>server.save</source>
         <target>enregistrer</target>
       </trans-unit>
-      <trans-unit id="22">
+      <trans-unit id="climberdav_hp_layer_22">
         <source>server.previous</source>
         <target>server précedent</target>
       </trans-unit>
-      <trans-unit id="23">
+      <trans-unit id="climberdav_hp_layer_23">
         <source>server.previous.choice</source>
         <target>choisir le serveur précedent (si besoin)</target>
       </trans-unit>
-        <trans-unit id="24">
+        <trans-unit id="climberdav_hp_layer_24">
             <source>server.edit_ok</source>
             <target>succès de la mise à jour </target>
         </trans-unit>
-        <trans-unit id="25">
+        <trans-unit id="climberdav_hp_layer_25">
             <source>flash.tested.ok</source>
             <target>Connexion avec le serveur valide</target>
         </trans-unit>
-        <trans-unit id="26">
+        <trans-unit id="climberdav_hp_layer_26">
             <source>flash.tested.fail</source>
             <target>echec de la connexion avec le serveur, erreur: </target>
         </trans-unit>
-      <trans-unit id="27">
+      <trans-unit id="climberdav_hp_layer_27">
         <source>server.version</source>
         <target>Version</target>
       </trans-unit>

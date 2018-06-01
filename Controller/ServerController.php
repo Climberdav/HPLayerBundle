@@ -108,6 +108,7 @@ class ServerController extends BaseController
      * @param Server $server
      * @return RedirectResponse
      * @Route("/{id}", name="climberdav_hp_layer_server_delete")
+     * @codeCoverageIgnore
      */
     public function deleteAction(Request $request, Server $server)
     {
@@ -128,6 +129,7 @@ class ServerController extends BaseController
      * @param Server $server
      *
      * @return \Symfony\Component\Form\Form The form
+     * @codeCoverageIgnore
      */
     private function createDeleteForm(Server $server)
     {
@@ -142,6 +144,7 @@ class ServerController extends BaseController
      * @param $id
      * @return RedirectResponse
      * @Route("/test/{id}", name="climberdav_hp_layer_server_test")
+     * @codeCoverageIgnore
      */
     public function testAction($id)
     {
