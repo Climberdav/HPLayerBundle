@@ -321,6 +321,12 @@ class Server
         return $this->disabled;
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     * @throws \SoapFault
+     * @codeCoverageIgnore
+     */
     public function connect()
     {
         $connexion = new ServerConnexion($this);
@@ -367,6 +373,7 @@ class Server
      * @param string $version
      *
      * @return Server
+     * @codeCoverageIgnore
      */
     public function setVersion($version)
     {

@@ -11,6 +11,7 @@ use Climberdav\HPLayerBundle\Entity\Student;
  *
  * @author David Dessertine <dessertine.david@gmail.com>
  * @package Climberdav\HPLayerBundle\Entity\Repository
+ * @codeCoverageIgnore
  */
 class StudentRepository extends Student
 {

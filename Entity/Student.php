@@ -9,7 +9,7 @@ namespace Climberdav\HPLayerBundle\Entity;
  *
  * @author David Dessertine <dessertine.david@gmail.com>
  * @package Climberdav\HPLayerBundle\Entity
- *
+ * @codeCoverageIgnore
  */
 class Student
 {

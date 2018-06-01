@@ -9,6 +9,7 @@ use Climberdav\HPLayerBundle\Entity\Server;
  *
  * @author David Dessertine <dessertine.david@gmail.com>
  * @package Climberdav\HPLayerBundle\Entity\Repository
+ * @codeCoverageIgnore
  */
 class ServerRepository extends EntityRepository
 {
