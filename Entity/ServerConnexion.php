@@ -2,12 +2,12 @@
 
 namespace Climberdav\HPLayerBundle\Entity;
 
+
 /**
  * Class ServerConnexion
  *
  * @author David Dessertine <dessertine.david@gmail.com>
  * @package Climberdav\HPLayerBundle\Entity
- * @ORM\Entity()
  */
 class ServerConnexion
 {

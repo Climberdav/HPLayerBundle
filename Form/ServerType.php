@@ -62,7 +62,9 @@ class ServerType extends AbstractType
                 'label' => 'server.disabled',
                 'required' => false
             ])
-            ->add('firstDayOfServer', DateType::class)
+            ->add('firstDayOfServer', DateType::class, [
+//                'widget' => 'single_text',
+            ])
             ->add('previousServer', EntityType::class, [
                 'class' => 'ClimberdavHPLayerBundle:Server',
                 'choice_label' => 'name',

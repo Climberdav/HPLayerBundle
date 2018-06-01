@@ -25,7 +25,7 @@ class LoadServerData implements FixtureInterface
     {
         $this->manager = $manager;
 
-        $this->createServer('one', '10.10.10.10', 'foo', 'vsd65v41d', $this->randomDate());
+        $this->createServer('one', '10.10.10.10', 'foo', 'vsd65v41d', new\DateTime('2020-01-01'));
         $this->createServer('two', '10.1.1.10', 'bar', 'vsd65v41d', $this->randomDate(), 'new', 8181,'http' , 'true');
         $this->createServer('tree', '192.168.10.10', 'foo', 'vsd65v41d', $this->randomDate(), '16_17');
         $this->createServer('four', '172.17.31.10', 'foo', 'vsd65v41d', $this->randomDate());

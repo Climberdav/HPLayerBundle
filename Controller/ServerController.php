@@ -74,7 +74,7 @@ class ServerController extends BaseController
      * @param Server $server
      * @Method({"GET", "POST"})
      * @return RedirectResponse|Response
-     * @Route("/{id}/edit", name="climberdav_hp_layer_server_edit")
+     * @Route("/edit/{id}", name="climberdav_hp_layer_server_edit")
      */
     public function editAction(Request $request, Server $server){
         $deleteForm = $this->createDeleteForm($server);
@@ -141,7 +141,7 @@ class ServerController extends BaseController
     /**
      * @param $id
      * @return RedirectResponse
-     * @Route("/{id}/test", name="climberdav_hp_layer_server_test")
+     * @Route("/test/{id}", name="climberdav_hp_layer_server_test")
      */
     public function testAction($id)
     {
@@ -166,7 +166,7 @@ class ServerController extends BaseController
     /**
      * @param $id
      * @return RedirectResponse
-     * @Route("/{id}/toggle", name="climberdav_hp_layer_server_toggle")
+     * @Route("/toggle/{id}", name="climberdav_hp_layer_server_toggle")
      */
     public function toggleAction($id)
     {

@@ -5,7 +5,6 @@ namespace Climberdav\HPLayerBundle\Tests\DependencyInjection;
 use Climberdav\HPLayerBundle\DependencyInjection\ClimberdavHPLayerExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Tests\Compiler\C;
 use Symfony\Component\Yaml\Yaml;
 
 class ClimberdavHPLayerExtensionTest extends TestCase
@@ -28,7 +27,7 @@ class ClimberdavHPLayerExtensionTest extends TestCase
     }
     public function provideConfiguration()
     {
-        $rootNode = 'climverdav_hp_layer';
+        $rootNode = 'climberdav_hp_layer';
         $dir = __DIR__ . '/configuration_set/';
         $configFiles = glob($dir . 'config_*.yml');
         $resultFiles = glob($dir . 'result_*.yml');
