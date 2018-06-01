@@ -28,7 +28,7 @@ class ServerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-//            ->add('id', HiddenType::class)
+            ->add('id', HiddenType::class)
             ->add('name', TextType::class, [
                 'label' => 'server.name',
                 'required' => true
