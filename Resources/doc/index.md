@@ -46,14 +46,36 @@ framework:
 $ php bin/console doctrine:schema:update --force
 ````
 
+***Note:*** Migrations
+If you use doctrine migration create an empty migration file `$ php bin/console doctrine:migrations:generate` and add the following line
+
+````php
+    public function up(Schema $schema)
+    {
+        /*...*/
+        $this->addSql('CREATE TABLE hyperplanning_server (id INTEGER NOT NULL,
+            previous_server_id INTEGER DEFAULT NULL,
+            name VARCHAR(255) NOT NULL, host_ip VARCHAR(255) NOT NULL,
+            host_port INTEGER NOT NULL, wsdl_root VARCHAR(255) NOT NULL,
+            wsdl_login VARCHAR(255) NOT NULL, wsdl_password VARCHAR(255) NOT NULL,
+            protocol VARCHAR(255) NOT NULL, first_day_of_server DATETIME NOT NULL,
+            disabled BOOLEAN NOT NULL, version VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))'
+        );
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_server_id ON hyperplanning_server (previous_server_id)');
+        /*...*/
+    }
+    
+    public function down(Schema $schema)
+    {
+        /*...*/
+        $this->addSql('DROP TABLE hyperplanning_server');
+        /*...*/
+    }
+````
+then do `$ php bin/console doctrine:migration:migrate`
+
 Now, you can use the bundle and manage your scheduling here : **http://{your-app-root}/server-hyperplanning**
 
-####4 - Override the views
-
-If you'd like to alter the navigation bar shown on `http://{your-app-root}/server-hyperplanning/` you'll want to override the navbar template. This can easily be done by using standard overrides in Symfony, as described here.
-
-In your project, you'll want to copy the Navbar:navbar:html.twig template into app/Resources/ClimberdavHPLayerBundle/views/Navbar/navbar.html.twig. Any changes to the file in this location will take precedence over the bundle's template file.
- 
 ####4 - Override the views
 
 If you'd like to alter the navigation bar shown on `http://{your-app-root}/server-hyperplanning/` you'll want to override the navbar template. This can easily be done by using standard overrides in Symfony, as described here.

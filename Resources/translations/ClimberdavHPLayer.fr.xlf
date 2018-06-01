@@ -98,10 +98,6 @@
             <source>server.edit_ok</source>
             <target>succès de la mise à jour </target>
         </trans-unit>
-        <trans-unit id="24">
-            <source>server.edit_ok</source>
-            <target>succès de la mise à jour </target>
-        </trans-unit>
         <trans-unit id="25">
             <source>flash.tested.ok</source>
             <target>Connexion avec le serveur valide</target>
