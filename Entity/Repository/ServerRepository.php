@@ -20,7 +20,7 @@ class ServerRepository extends EntityRepository
      */
     public function findAll()
     {
-        return $this->findBy([], ['firstDayOfServer' => 'DESC']);
+        return $this->findBy([], ['firstDayOfServer' => 'ASC']);
     }
 
     /**
@@ -30,6 +30,6 @@ class ServerRepository extends EntityRepository
      */
     public function findEnabledServer()
     {
-        return $this->findBy(['disabled' => false], ['firstDayOfServer' => 'DESC']);
+        return $this->findBy(['disabled' => false], ['firstDayOfServer' => 'ASC']);
     }
 }

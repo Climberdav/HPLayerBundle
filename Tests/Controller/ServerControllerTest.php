@@ -4,6 +4,7 @@ namespace Climberdav\HPLayerBundle\Tests\Controller;
 
 use Climberdav\HPLayerBundle\Controller\ServerController;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
+use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
@@ -99,7 +100,7 @@ class ServerControllerTest extends WebTestCase
         $client->submit($form);
         $this->assertStatusCode(302, $client);
         $crawler = $client->followRedirect();
-        $this->assertEquals("edited one", trim($crawler->filter('td')->eq(1)->text()));
+        $this->assertEquals("edited one", trim($crawler->filter('table>tbody>tr')->last()->filter('td')->eq(1)->text()));
     }
 
 //    public function testRemove()

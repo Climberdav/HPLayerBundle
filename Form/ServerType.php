@@ -2,6 +2,8 @@
 
 namespace Climberdav\HPLayerBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
+use SebastianBergmann\GlobalState\Restorer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -13,6 +15,9 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Climberdav\HPLayerBundle\Entity\Server;
 use Symfony\Component\Validator\Constraints\Ip;
@@ -52,7 +57,7 @@ class ServerType extends AbstractType
                 'choices' => [
                     "http" => "http",
                     "https" => "https"
-    ]
+                ]
             ])
             ->add('password', PasswordType::class, [
                 'label' => 'server.password'
@@ -64,17 +69,51 @@ class ServerType extends AbstractType
             ->add('firstDayOfServer', DateType::class, [
 //                'widget' => 'single_text',
             ])
-            ->add('previousServer', EntityType::class, [
-                'class' => 'ClimberdavHPLayerBundle:Server',
-                'choice_label' => 'name',
-                'required' => false,
-                'label' => 'server.previous',
-                'placeholder' => 'server.previous.choice'
-                ])
             ->add('save',SubmitType::class, [
                 'label' => 'server.save',
             ])
             ;
+
+        $builder->addEventListener(FormEvents::PRE_SET_DATA,
+            function (FormEvent $event)
+            {
+                $server = $event->getData();
+                $form = $event->getForm();
+                if (!$server || null === $server->getId())
+                {
+                    $form->add('previousServer', EntityType::class, [
+                        'class' => 'ClimberdavHPLayerBundle:Server',
+                        'query_builder' => function (EntityRepository $er)
+                        {
+                            return $er->createQueryBuilder('s')
+                                ->where('s.disabled = 0')
+                                ->orderBy('s.firstDayOfServer', 'ASC');
+                        },
+                        'choice_label' => 'name',
+                        'required' => false,
+                        'label' => 'server.previous',
+                        'placeholder' => 'server.previous.choice'
+                    ]);
+                }
+                else
+                {
+                    $form->add('previousServer', EntityType::class, [
+                        'class' => 'ClimberdavHPLayerBundle:Server',
+                        'query_builder' => function (EntityRepository $er) use ($server)
+                        {
+                            return $er->createQueryBuilder('s')
+                                ->where('s.disabled = 0')
+                                ->andWhere('s.id != :server')
+                                    ->setParameter('server', $server->getId())
+                                ->orderBy('s.firstDayOfServer', 'ASC');
+                        },
+                        'choice_label' => 'name',
+                        'required' => false,
+                        'label' => 'server.previous',
+                        'placeholder' => 'server.previous.choice'
+                    ]);
+                }
+            });
     }
 
     public function configureOptions(OptionsResolver $resolver)
